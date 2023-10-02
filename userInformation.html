@@ -1,0 +1,69 @@
+<template>
+  <lightning-card title="Details" icon-name="standard:individual">
+    <div class="slds-p-horizontal_small">
+        <template if:true={noEmailAddress}>
+          This contact record does not contain an email address to display its related user information.
+        </template> 
+        <template if:true={noUserFound}>
+         This contact record does not have any user information.
+        </template> 
+        <template if:true={userDetails}>
+          <img src={userDetails.photoUrl}   width="100" height="100">
+          <lightning-layout multiple-rows>
+            <lightning-layout-item size="12">
+                <lightning-input 
+                  label='Title'
+                  value={userDetails.title}
+                  read-only>
+                </lightning-input> 
+                <lightning-input 
+                  label='Full Name'
+                  value={userDetails.name} 
+                  read-only>
+                </lightning-input> 
+                <lightning-input 
+                  label='About Me'
+                  value={userDetails.aboutMe}
+                  read-only>
+                </lightning-input> 
+                <lightning-input 
+                  label='Profile'
+                  value={userDetails.profile}
+                  read-only>
+                </lightning-input> 
+                <lightning-input 
+                  label = 'Role'
+                  value={userDetails.userRole}
+                  read-only>
+                </lightning-input> 
+                <lightning-input 
+                  label='Division'
+                  value={userDetails.division}
+                  read-only>
+                </lightning-input> 
+                <lightning-input 
+                  label='Company Name'
+                  value={userDetails.companyName}
+                  read-only>
+                </lightning-input> 
+                <lightning-input 
+                  label='Username'
+                  value={userDetails.username}
+                  read-only>
+                </lightning-input> 
+                <lightning-input 
+                  label='SAML Federation ID'
+                  value={userDetails.federationIdentifier}
+                  read-only >
+                </lightning-input> 
+                <lightning-input 
+                  label='Time Zone'
+                  value={userDetails.timezone}
+                  read-only>
+                </lightning-input> 
+              </lightning-layout-item>
+           </lightning-layout>
+        </template>
+    </div> 
+  </lightning-card>
+ </template>
